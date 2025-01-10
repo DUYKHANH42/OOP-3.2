@@ -14,7 +14,7 @@
         public Account()
         {
             this.stk = 0;
-            this.tentk = " ";
+            this.tentk=null;
             this.sodutk = 0;
         }
         public void setstk(int stk)
@@ -45,16 +45,18 @@
         }
         public void napTien(double tien)
         {
-            sodutk += tien;
+          
+            sodutk +=tien;
+            
         }
         public void rutTien(double tien)
         {
-            sodutk -= tien;
+            
+           sodutk -= tien;
         }
-        public void chuyenTien(Account tk, double tien)
+        public void chuyenTien(Account tkNhan, double tienChuyen)
         {
-            sodutk -= tien;
-            tk.sodutk += tien;
+            tkNhan.napTien(tienChuyen);
         }
     }
 }
