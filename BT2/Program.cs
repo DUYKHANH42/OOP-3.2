@@ -7,16 +7,13 @@ namespace BT2
     {
         static void Main(string[] args)
         {
-            Account[] accounts =new Account[2];
-            Account tk1 = new Account(121323, "Nguyen Van A", 1000);
-            Account tk2 = new Account(121324, "Nguyen Van B", 2000);
+            Account account;
             int chon = 0;
-            Bank bank = new Bank();
+            Bank bank = new Bank(); 
             do
                 
             {
                 Console.WriteLine("{0,15}","VCB digibank");
-                Console.WriteLine("Kinh chao {0}", tk1.gettentk());
                 Console.WriteLine("------Menu------");
                 Console.WriteLine("1. Them tai khoan");
                 Console.WriteLine("2. Xoa tai khoan");
@@ -31,18 +28,24 @@ namespace BT2
                 switch (chon)
                 {
                     case 1:
-                        bank.ThemAccount(new Account);
+                        bank.ThemAccount(account = new Account());
                         break;
-
-                    case 8:
-                       
+                    case 2:
+                        bank.XoaAccount();
                         break;
-
-
+                    case 3:
+                        bank.NapTien();
+                        break;
+                    case 4:
+                        bank.RutTien();
+                        break;
+                    case 5:
+                        bank.ChuyenTien();
+                        break;
+                    case 6:
+                        bank.XemDanhSach();
+                        break;
                 }
-
-
-
             } while (chon != 7);
             Console.ReadLine();
 
